@@ -1,8 +1,9 @@
 const { default: mongoose } = require("mongoose");
+require('dotenv').config();
 
 const connectDB = async () => {
   await mongoose.connect(
-    "mongodb+srv://pscodz:psgamex@ps.mzbmbv0.mongodb.net/"
+    process.env.MONGODB_URL
   );
 };
 

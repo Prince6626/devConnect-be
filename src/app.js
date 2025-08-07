@@ -2,7 +2,14 @@ const express = require("express");
 const connectDB = require("./config/database");
 const cookieParser = require("cookie-parser");
 const app = express();
+const cors = require("cors");
 
+app.use(
+  cors({
+    origin: "http://localhost:5173", // frontend URL (adjust if needed)
+    credentials: true, // allow cookies
+  })
+);
 app.use(express.json());
 app.use(cookieParser());
 
@@ -16,7 +23,7 @@ app.use("/", authRouter);
 app.use("/", profileRouter);
 app.use("/", FpRouter);
 app.use("/", requestRouter);
-app.use("/",userRouter);
+app.use("/", userRouter);
 
 connectDB()
   .then(() => {
