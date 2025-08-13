@@ -5,20 +5,21 @@ const userAuth = async (req, res, next) => {
   try {
     const { token } = req.cookies;
     if (!token) {
-      res.status(401).send("Please Login!!");
+      return res.status(401).send("Please Login!!"); // ✅ return here
     }
 
-    const docodeObj = await jwt.verify(token, "DEV@Tinder$790");
+    const decodedObj = jwt.verify(token, "DEV@Tinder$790"); // no need await
 
-    const { _id } = docodeObj;
+    const { _id } = decodedObj;
     const user = await User.findById(_id);
     if (!user) {
-      throw new Error("User not found");
+      return res.status(404).send("User not found"); // ✅ return here too
     }
+
     req.user = user;
     next();
   } catch (err) {
-    res.status(400).send("ERROR : " + err.message);
+    return res.status(400).send("ERROR : " + err.message); // ✅ also return
   }
 };
 
