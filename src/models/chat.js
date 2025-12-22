@@ -18,7 +18,13 @@ const chatSchema = new mongoose.Schema({
         ref : "User",
         required : true
     }],
-    messages : [messageSchema]
+    messages : [messageSchema],
+    // Track unread message counts per user
+    unreadCount : {
+        type : Map,
+        of : Number,
+        default : new Map()
+    }
     // there is no sender or reciever becuase i do not want to restrict chat to 2 people
 
 })
