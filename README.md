@@ -1,14 +1,5 @@
 # devConnect - Backend
 
-> RESTful API and WebSocket server for devConnect professional networking platform
-
-![Node.js](https://img.shields.io/badge/Node.js-20+-339933?logo=node.js)
-![Express](https://img.shields.io/badge/Express-5.1-000000?logo=express)
-![MongoDB](https://img.shields.io/badge/MongoDB-8.16-47A248?logo=mongodb)
-![Socket.IO](https://img.shields.io/badge/Socket.IO-4.8-010101?logo=socket.io)
-
-## 🌟 Features
-
 ### Core API
 - **🔐 Authentication** - JWT-based auth with bcrypt password hashing
 - **👤 User Management** - CRUD operations for user profiles
@@ -289,67 +280,6 @@ User logs in → Fetches unread counts
 - Configured for specific frontend origin
 - Credentials enabled for cookies
 
-## 🚀 Deployment
-
-### Environment Setup
-```bash
-# Production environment variables
-NODE_ENV=production
-MONGODB_URI=your_production_mongodb_uri
-JWT_SECRET=your_production_secret
-FRONTEND_URL=https://your-frontend-domain.com
-```
-
-### Deploy to Heroku
-```bash
-heroku create devconnect-api
-git push heroku main
-heroku config:set MONGODB_URI=your_uri
-heroku config:set JWT_SECRET=your_secret
-```
-
-### Deploy to Railway
-```bash
-railway login
-railway init
-railway up
-```
-
-### Deploy to Render
-1. Connect GitHub repository
-2. Set environment variables
-3. Deploy
-
-## 🧪 Testing
-
-### Manual Testing with Postman
-Import the API collection (to be added) and test endpoints.
-
-### Automated Testing
-```bash
-npm test
-```
-(Test suite to be implemented)
-
-## 📊 Performance Optimization
-
-- **Database Indexing** - Indexed fields for faster queries
-- **Connection Pooling** - MongoDB connection pool
-- **Socket.IO Rooms** - Efficient message routing
-- **Map Data Structure** - O(1) unread count lookups
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the ISC License.
-
 ## 👨‍💻 Author
 
 **Prince Patel**
@@ -358,13 +288,3 @@ This project is licensed under the ISC License.
 
 - [devConnect Frontend](https://github.com/Prince6626/devConnect-fe) - React frontend application
 
-## 🙏 Acknowledgments
-
-- Express.js team for the robust framework
-- MongoDB team for the flexible database
-- Socket.IO team for real-time capabilities
-- Open source community for amazing packages
-
----
-
-**Note**: Make sure MongoDB is running before starting the server.
