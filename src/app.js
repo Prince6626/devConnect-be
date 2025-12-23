@@ -7,7 +7,7 @@ const http = require("http");
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // frontend URL (adjust if needed)
+    origin: "https://dev-connect-fe.vercel.app/", // frontend URL (adjust if needed)
     credentials: true, // allow cookies
   })
 );
